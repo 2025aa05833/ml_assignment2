@@ -155,7 +155,7 @@ else:
             'prediction_label': pd.Series(y_pred).map({1: 'malignant', 0: 'benign'})
         })
         if y_score is not None:
-            preds['probability'] = y_score
+            preds['malignant_probability'] = y_score
 
         st.write('Predictions:')
         st.dataframe(pd.concat([user_df.reset_index(drop=True), preds], axis=1).head(50), use_container_width=True)
